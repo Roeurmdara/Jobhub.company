@@ -1,7 +1,5 @@
-// src/pages/Register.jsx
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import bcrypt from "bcryptjs"; 
 
 const Register = () => {
   const navigate = useNavigate();
@@ -11,7 +9,7 @@ const Register = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const handleRegister = async (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
     setError("");
     setSuccess("");
@@ -22,19 +20,11 @@ const Register = () => {
     }
 
     try {
-      // ✅ Hash the password securely before storing
-      const hashedPassword = await bcrypt.hash(password, 10);
-      const userData = { email, hashedPassword };
+      // Simulate storing user data (password as plain text for demo only)
+      const userData = { email, password };
+      console.log("User registered:", userData);
 
-      // ✅ Simulate saving to a secure database (not localStorage!)
-      // In a real app, you would send a request to your backend here.
-      console.log("Simulating registration with hashed password:", userData);
-
-      // In a real application, the server would handle authentication and
-      // return a JWT token or session cookie. For this example, we'll
-      // just pretend it was successful.
       setSuccess("Registration successful! Redirecting to login...");
-
       setTimeout(() => {
         navigate("/login");
       }, 2000);
@@ -45,40 +35,56 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <h1>Register Page</h1>
-      <form onSubmit={handleRegister}>
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        {success && <p style={{ color: "green" }}>{success}</p>}
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <br />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <br />
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required
-        />
-        <br />
-        <button type="submit">Register</button>
-      </form>
-      <p>
-        Already have an account? <Link to="/login">Login here</Link>
-      </p>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-md">
+        <h1 className="text-2xl font-bold text-gray-800 mb-6 text-center">Create an Account</h1>
+
+        <form onSubmit={handleRegister} className="space-y-4">
+          {error && <p className="text-red-600 text-sm">{error}</p>}
+          {success && <p className="text-green-600 text-sm">{success}</p>}
+
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+
+          <input
+            type="password"
+            placeholder="Password"
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
+
+          <button
+            type="submit"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition"
+          >
+            Register
+          </button>
+        </form>
+
+        <p className="mt-6 text-center text-gray-600 text-sm">
+          Already have an account?{" "}
+          <Link to="/login" className="text-blue-600 hover:underline">
+            Login here
+          </Link>
+        </p>
+      </div>
     </div>
   );
 };
