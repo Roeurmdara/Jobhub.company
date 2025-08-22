@@ -376,7 +376,7 @@ const ApplicationDetail = () => {
         {/* Left Column - Applicant Info */}
         <div className="space-y-6">
           {/* Profile Card */}
-          <div className="bg-white rounded-lg p-6 shadow-sm border-1">
+          <div className="bg-white rounded-lg p-6 shadow-sm border-gray-200 border-1">
             <div className="text-center mb-6">
               <img
                 src={enhancedApplicant.avatar || "/placeholder.svg"}
@@ -422,7 +422,7 @@ const ApplicationDetail = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="bg-white rounded-lg p-6 shadow-sm border-1">
+          <div className="bg-white rounded-lg p-6 shadow-sm border-gray-200 border-1">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact</h3>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
@@ -492,7 +492,7 @@ const ApplicationDetail = () => {
 
         {/* Right Column - Tabbed Content */}
         <div className="lg:col-span-2">
-          <div className="bg-white rounded-lg shadow-sm border-1">
+          <div className="bg-white rounded-lg shadow-sm border-gray-200 border-1 ">
             {/* Tab Navigation */}
             <div className="border-b border-gray-200">
               <nav className="flex space-x-8 px-6">
