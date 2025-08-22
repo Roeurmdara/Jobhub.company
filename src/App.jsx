@@ -7,7 +7,6 @@ import PrivateRoute from "./layouts/ProtectedRoute";
 import SidebarOnlyLayout from "./layouts/SidebarOnlyLayout";
 import DashboardLayout from "./layouts/DashboardLayout";
 
-
 // Import Pages
 import Loading from "./pages/Loading";
 import Register from "./pages/Register";
