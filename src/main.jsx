@@ -1,15 +1,13 @@
- import React from 'react';
- import ReactDOM from 'react-dom/client';
- import './index.css';
- import 'flowbite';
- import App from './App';
- 
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import 'flowbite';  // Correct way to include Flowbite
+import App from './App';
 
- const root = ReactDOM.createRoot(document.getElementById('root'));
- root.render(
-   <React.StrictMode>
-    
-     <App />
-  
-   </React.StrictMode>
- );
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
