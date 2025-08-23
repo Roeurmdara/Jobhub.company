@@ -1,19 +1,14 @@
 // App.jsx
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-
 import { AuthProvider, useAuth } from "./context/AuthContext";
 import PublicLayout from "./layouts/PublicLayout";
 import PrivateRoute from "./layouts/ProtectedRoute";
 import SidebarOnlyLayout from "./layouts/SidebarOnlyLayout";
 import DashboardLayout from "./layouts/DashboardLayout";
-
 // Import Pages
 import Loading from "./pages/Loading";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import Forgetpassword from "./pages/Forgetpassword";
-import Donelogin from "./pages/Donelogin";
-import Checkemail from "./pages/Checkemail";
 import Setdetail from "./pages/Setdetail";
 import Messager from "./pages/Messager";
 import BrowseCompanies from "./pages/BrowseCompanies";
@@ -47,9 +42,7 @@ function AppContent() {
         <Route path="/" element={<Loading />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/forget-password" element={<Forgetpassword />} />
-        <Route path="/done-login" element={<Donelogin />} />
-        <Route path="/check-email" element={<Checkemail />} />
+
       </Route>
 
       {/* Private Routes */}
