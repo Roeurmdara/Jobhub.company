@@ -26,7 +26,7 @@ function Navbar() {
     <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
      <button
   type="button"
-  className="bg-blue-600 text-white hover:bg-blue-700 font-medium rounded-lg text-sm px-4 py-2"
+  className="bg-blue-500 text-white hover:bg-blue-700 font-medium rounded-lg text-sm px-4 py-2"
 >
   Get started
 </button>
